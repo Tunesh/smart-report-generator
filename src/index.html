@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Report Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- OCR Library -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <!-- File Saver Library -->
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Section -->
+      <div class="header">
+        <!-- ✅ Banner with placeholder fallback -->
+        <img
+          src="./assets/banner.jpg"
+          alt="Banner"
+          class="banner-img"
+          onerror="this.onerror=null; this.src='https://source.unsplash.com/600x180/?report,office';"
+        />
+        <h1 class="title">Smart Report Generator</h1>
+        <p class="subtitle">
+          Upload, snap, or paste text and generate reports easily.
+        </p>
+      </div>
+
+      <!-- Buttons Section -->
+      <div class="button-group">
+        <input type="file" id="fileUpload" accept="image/*" hidden />
+        <label for="fileUpload" class="btn">📂 Upload Image</label>
+
+        <button id="openCamera" class="btn">📷 Use Camera</button>
+        <button id="pasteText" class="btn">✍️ Paste Text</button>
+      </div>
+
+      <!-- Camera Section -->
+      <div id="cameraSection" class="camera-container hidden">
+        <video id="video" autoplay></video>
+        <button id="captureBtn" class="btn">C</button>
+      </div>
+    </div>
+  </body>
+</html>
